@@ -1,0 +1,315 @@
+/* ====================================================== */
+/* PALETA DE CORES E CONFIGURAÇÕES GERAIS                 */
+/* ====================================================== */
+
+/* Tema Escuro (Padrão) */
+:root {
+    --cor-fundo: #0d1117;
+    --cor-fundo-secundaria: #161b22;
+    --cor-borda: #30363d;
+    --cor-texto: #c9d1d9;
+    --cor-texto-secundario: #8b949e;
+    --cor-destaque-principal: #3A7DFF;
+    --cor-destaque-texto: #ffffff;
+}
+
+/* Tema Claro */
+body.light-mode {
+    --cor-fundo: #ffffff;
+    --cor-fundo-secundaria: #f0f2f5;
+    --cor-borda: #d0d7de;
+    --cor-texto: #1c1e21;
+    --cor-texto-secundario: #65676b;
+    --cor-destaque-principal: #0c59cf;
+    --cor-destaque-texto: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo); 
+    color: var(--cor-texto);
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ====================================================== */
+/* ESTILOS DO HEADER                                      */
+/* ====================================================== */
+.header {
+    background-color: var(--cor-fundo-secundaria);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
+.logo-container img {
+    max-height: 50px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.header .navigation a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: color .3s ease;
+}
+
+.header .navigation a:hover {
+    color: var(--cor-destaque-principal);
+}
+
+#theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-texto-secundario);
+    padding: 0 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle:hover {
+    color: var(--cor-destaque-principal);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ====================================================== */
+/* ESTILOS DA SEÇÃO HERO (BOAS-VINDAS)                    */
+/* ====================================================== */
+.hero-section {
+    min-height: calc(100vh - 85px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+.hero-title .highlight {
+    color: var(--cor-destaque-principal);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: var(--cor-texto-secundario);
+}
+
+.hero-button {
+    background-color: var(--cor-destaque-principal);
+    color: var(--cor-destaque-texto);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--cor-destaque-principal) 50%, transparent);
+}
+
+/* ====================================================== */
+/* ESTILOS DAS SEÇÕES DE CURSOS                            */
+/* ====================================================== */
+.courses-section {
+    padding: 4rem 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.course-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: var(--cor-fundo-secundaria);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 2rem;
+    flex-basis: 320px;
+    flex-grow: 1;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-destaque-principal);
+}
+
+.course-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+}
+
+.course-description {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.course-button {
+    display: inline-block;
+    text-align: center;
+    background-color: transparent;
+    color: var(--cor-destaque-principal);
+    border: 1px solid var(--cor-destaque-principal);
+    padding: .75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.course-button:hover {
+    background-color: var(--cor-destaque-principal);
+    color: var(--cor-destaque-texto);
+}
+
+/* ====================================================== */
+/* ESTILOS DA SEÇÃO DE CONTATO                            */
+/* ====================================================== */
+.contact-section {
+    background-color: var(--cor-fundo-secundaria);
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.contact-subtitle {
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-destaque-principal);
+    border: 2px solid var(--cor-texto-secundario);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: all .3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--cor-destaque-principal);
+    border-color: var(--cor-destaque-principal);
+    color: var(--cor-destaque-texto);
+    transform: translateY(-5px);
+}
+
+/* ====================================================== */
+/* ESTILOS DO RODAPÉ                                      */
+/* ====================================================== */
+.footer {
+    background-color: var(--cor-fundo);
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--cor-borda);
+    font-size: .9rem;
+    color: var(--cor-texto-secundario);
+}
+/* ====================================================== */
+/* ESTILOS PARA "VER MAIS" CURSOS                         */
+/* ====================================================== */
+
+/* Esta classe será adicionada via JS para esconder os cards */
+.course-card.hidden {
+    display: none;
+}
+
+.load-more-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.load-more-button {
+    background-color: transparent;
+    border: 1px solid var(--cor-texto-secundario);
+    color: var(--cor-texto-secundario);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.load-more-button:hover {
+    background-color: var(--cor-destaque-principal);
+    border-color: var(--cor-destaque-principal);
+    color: var(--cor-destaque-texto);
+}
+
+.load-more-button i {
+    transition: transform 0.3s ease;
+}
+
+.load-more-button:hover i {
+    transform: translateY(3px);
+}
