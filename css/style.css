@@ -2,10 +2,11 @@
 /* PALETA DE CORES E CONFIGURAÇÕES GERAIS                 */
 /* ====================================================== */
 
-/* Tema Escuro (Padrão) */
 :root {
     --cor-fundo: #0d1117;
     --cor-fundo-secundaria: #161b22;
+    /* NOVIDADE: Adicionamos uma versão da cor com transparência */
+    --cor-fundo-secundaria-transparente: rgba(22, 27, 34, 0.85); /* 85% de opacidade */
     --cor-borda: #30363d;
     --cor-texto: #c9d1d9;
     --cor-texto-secundario: #8b949e;
@@ -13,10 +14,11 @@
     --cor-destaque-texto: #ffffff;
 }
 
-/* Tema Claro */
 body.light-mode {
     --cor-fundo: #ffffff;
     --cor-fundo-secundaria: #f0f2f5;
+    /* NOVIDADE: Versão clara com transparência */
+    --cor-fundo-secundaria-transparente: rgba(240, 242, 245, 0.85); /* 85% de opacidade */
     --cor-borda: #d0d7de;
     --cor-texto: #1c1e21;
     --cor-texto-secundario: #65676b;
@@ -35,6 +37,28 @@ body {
     color: var(--cor-texto);
     font-family: system-ui, -apple-system, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    
+    /* NOVIDADE: IMAGEM DE FUNDO */
+    background-image: url('../img/fundo-logo.png'); /* Caminho para a imagem */
+    background-size: 2000px; /* Tamanho da imagem no fundo */
+    background-repeat: no-repeat; /* Para a imagem não se repetir */
+    background-position: center center; /* Centraliza a imagem na tela */
+    background-attachment: fixed; /* Deixa a imagem fixa enquanto a página rola */
+    background-blend-mode: overlay; /* Efeito para mesclar com a cor de fundo */
+    opacity: 1; /* Garantir que o body esteja visível */
+}
+
+/* Criamos um pseudo-elemento para escurecer o fundo e melhorar a leitura */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-fundo);
+    opacity: 0.90; /* Controla a visibilidade da imagem de fundo. 0.95 = 95% de cor, 5% de imagem */
+    z-index: -1; /* Coloca este elemento atrás de todo o conteúdo */
 }
 
 /* ====================================================== */
@@ -216,61 +240,6 @@ body {
 }
 
 /* ====================================================== */
-/* ESTILOS DA SEÇÃO DE CONTATO                            */
-/* ====================================================== */
-.contact-section {
-    background-color: var(--cor-fundo-secundaria);
-    padding: 4rem 5%;
-    text-align: center;
-}
-
-.contact-subtitle {
-    max-width: 500px;
-    margin: 0 auto 2.5rem;
-    color: var(--cor-texto-secundario);
-    font-size: 1.1rem;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.social-links a {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--cor-destaque-principal);
-    border: 2px solid var(--cor-texto-secundario);
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 1.8rem;
-    transition: all .3s ease;
-}
-
-.social-links a:hover {
-    background-color: var(--cor-destaque-principal);
-    border-color: var(--cor-destaque-principal);
-    color: var(--cor-destaque-texto);
-    transform: translateY(-5px);
-}
-
-/* ====================================================== */
-/* ESTILOS DO RODAPÉ                                      */
-/* ====================================================== */
-.footer {
-    background-color: var(--cor-fundo);
-    text-align: center;
-    padding: 1.5rem;
-    border-top: 1px solid var(--cor-borda);
-    font-size: .9rem;
-    color: var(--cor-texto-secundario);
-}
-/* ====================================================== */
 /* ESTILOS PARA "VER MAIS" CURSOS                         */
 /* ====================================================== */
 
@@ -312,4 +281,82 @@ body {
 
 .load-more-button:hover i {
     transform: translateY(3px);
+}
+
+/* ====================================================== */
+/* ESTILOS DA SEÇÃO DE CONTATO                            */
+/* ====================================================== */
+.contact-section {
+    /* MUDANÇA: Usando a nova variável com transparência */
+    background-color: var(--cor-fundo-secundaria-transparente);
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.contact-subtitle { max-width: 500px; margin: 0 auto 2.5rem; color: var(--cor-texto-secundario); font-size: 1.1rem; }
+.social-links { display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+
+/* Ajuste para os links que são SÓ ÍCONE */
+.social-links a {
+    min-width: 60px; /* Largura mínima */
+    height: 60px;
+    padding: 0 20px; /* Espaçamento interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-destaque-principal);
+    border: 2px solid var(--cor-texto-secundario);
+    border-radius: 50px; /* Borda de pílula, para acomodar texto */
+    text-decoration: none;
+    font-size: 1.2rem; /* Tamanho do texto/email */
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+/* Ajuste para o ícone dentro do link */
+.social-links a i {
+    font-size: 1.8rem; /* Tamanho do ícone */
+    margin-right: 0.75rem; /* Espaço entre o ícone e o texto */
+}
+
+/* Esconde o texto do e-mail por padrão */
+.social-links a span {
+    display: none;
+}
+
+/* Mostra o texto APENAS no link de e-mail */
+.social-links a.email-link span {
+    display: inline;
+}
+
+/* Faz os links que são só ícone voltarem a ser um círculo perfeito */
+.social-links a:not(.email-link) {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* Esconde o espaço do ícone em links que são só texto (caso precise no futuro) */
+.social-links a:not(.email-link) i {
+    margin-right: 0;
+}
+
+.social-links a:hover {
+    background-color: var(--cor-destaque-principal);
+    border-color: var(--cor-destaque-principal);
+    color: var(--cor-destaque-texto);
+    transform: translateY(-5px);
+}
+
+/* ====================================================== */
+/* ESTILOS DO RODAPÉ                                      */
+/* ====================================================== */
+.footer {
+    background-color: var(--cor-fundo);
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--cor-borda);
+    font-size: .9rem;
+    color: var(--cor-texto-secundario);
 }
