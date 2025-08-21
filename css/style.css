@@ -1,11 +1,9 @@
 /* ====================================================== */
 /* PALETA DE CORES E CONFIGURAÇÕES GERAIS                 */
 /* ====================================================== */
-
 :root {
     --cor-fundo: #0d1117;
     --cor-fundo-secundaria: #161b22;
-    /* NOVIDADE: Adicionamos uma versão da cor com transparência */
     --cor-fundo-secundaria-transparente: rgba(22, 27, 34, 0.85); /* 85% de opacidade */
     --cor-borda: #30363d;
     --cor-texto: #c9d1d9;
@@ -17,7 +15,6 @@
 body.light-mode {
     --cor-fundo: #ffffff;
     --cor-fundo-secundaria: #f0f2f5;
-    /* NOVIDADE: Versão clara com transparência */
     --cor-fundo-secundaria-transparente: rgba(240, 242, 245, 0.85); /* 85% de opacidade */
     --cor-borda: #d0d7de;
     --cor-texto: #1c1e21;
@@ -359,4 +356,69 @@ body::before {
     border-top: 1px solid var(--cor-borda);
     font-size: .9rem;
     color: var(--cor-texto-secundario);
+}
+/* ====================================================== */
+/* AJUSTES PARA DISPOSITIVOS MÓVEIS (CELULARES E TABLETS) */
+/* ====================================================== */
+@media screen and (max-width: 768px) {
+
+    .courses-section, .contact-section {
+        padding: 3rem 5%;
+    }
+    
+    .header {
+        flex-direction: column; /* Coloca os itens um embaixo do outro */
+        gap: 1rem; /* Adiciona um espaço entre as linhas */
+        padding: 1rem;
+    }
+
+    .header .navigation {
+        order: 3; /* Muda a ordem, colocando a navegação por último */
+        border-top: 1px solid var(--cor-borda);
+        width: 100%;
+        padding-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .header .navigation a {
+        margin-left: 0; /* Remove a margem antiga */
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: space-between; /* Alinha logo e botão de tema */
+    }
+
+
+    #theme-toggle {
+        order: 2;
+    }
+
+    .hero-title {
+        font-size: 2.5rem; 
+    }
+
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .course-card {
+        padding: 1.5rem; /* Deixa os cards um pouco menos "gordos" */
+    }
+
+    .social-links a.email-link {
+        width: 100%;
+        max-width: 350px; /* Limita a largura máxima */
+    }
+    
+    .social-links a.email-link span {
+        font-size: 1rem; /* Diminui a fonte do e-mail para caber melhor */
+    }
 }
