@@ -429,7 +429,7 @@ body::before {
     width: 60px;
     height: 60px;
     bottom: 25px; /* Distância da parte de baixo */
-    left: 25px;   /* Distância da esquerda */
+    left: 25px; /* Distância da esquerda */
     background-color: #25D366; /* Cor oficial do WhatsApp */
     border-radius: 50%; /* Deixa o fundo redondo */
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
@@ -441,6 +441,9 @@ body::before {
     align-items: center;
 
     transition: transform 0.2s ease-in-out;
+
+    /* A LINHA QUE ADICIONAMOS PARA REMOVER O SUBLINHADO */
+    text-decoration: none;
 }
 
 .whatsapp-float:hover {
