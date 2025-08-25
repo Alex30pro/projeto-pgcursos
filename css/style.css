@@ -1,26 +1,26 @@
 :root {
     /* Cores da paleta laranja */
-    --cor-fundo: #1a1a1a; /* Um fundo quase preto para o laranja vibrar */
-    --cor-fundo-secundaria: #2c2c2c; /* Um cinza bem escuro para os cards */
-    --cor-fundo-secundaria-transparente: rgba(44, 44, 44, 0.85);
-    --cor-borda: #444444; /* Borda cinza escura */
-    --cor-texto: #f0f0f0; /* Texto principal quase branco */
-    --cor-texto-secundario: #a0a0a0; /* Texto secundário cinza claro */
+    --cor-fundo: #241705; /* Laranja bem escuro */
+    --cor-fundo-secundaria: #43301b; /* Tom mais escuro para os cards */
+    --cor-fundo-secundaria-transparente: rgba(67, 48, 27, 0.85);
+    --cor-borda: #5e4d3a; /* Borda em tom terroso */
+    --cor-texto: #f2e3d5; /* Texto principal quase branco */
+    --cor-texto-secundario: #b8a998; /* Texto secundário mais suave */
     
     /* Cores de destaque da nova paleta */
     --cor-destaque-principal: #F09410; /* Laranja vibrante */
-    --cor-destaque-secundario: #BC430D; /* Laranja mais escuro para hover/detalhes */
+    --cor-destaque-secundario: #BC430D; /* Laranja mais escuro para hover */
     --cor-destaque-texto: #ffffff; /* Texto branco para os botões */
 }
 
 body.light-mode {
-    --cor-fundo: #FEFBF8; /* Um fundo bege/quase branco */
-    --cor-fundo-secundaria: #ffffff; /* Cards brancos */
-    --cor-fundo-secundaria-transparente: rgba(255, 255, 255, 0.85);
-    --cor-borda: #e0e0e0; /* Borda cinza bem clara */
-    --cor-texto: #2c2c2c; /* Texto escuro */
-    --cor-texto-secundario: #6a6a6a; /* Texto secundário cinza */
-    
+    --cor-fundo: #FEEAF0; /* Laranja bem claro (quase bege) */
+    --cor-fundo-secundaria: #F0D0C7; /* Tom um pouco mais presente para os cards */
+    --cor-fundo-secundaria-transparente: rgba(240, 208, 199, 0.85);
+    --cor-borda: #e0bba2; /* Borda clara em tom de laranja */
+    --cor-texto: #43301b; /* Texto escuro, no tom do laranja escuro */
+    --cor-texto-secundario: #7a685a; /* Texto secundário mais suave */
+
     /* Cores de destaque para o tema claro */
     --cor-destaque-principal: #BC430D; /* Laranja escuro para boa leitura */
     --cor-destaque-secundario: #F09410; /* Laranja vibrante para hover */
@@ -58,8 +58,8 @@ body::before {
     width: 100%;
     height: 100%;
     background-color: var(--cor-fundo);
-    opacity: 0.90; /* Controla a visibilidade da imagem de fundo. 0.95 = 95% de cor, 5% de imagem */
-    z-index: -1; /* Coloca este elemento atrás de todo o conteúdo */
+    opacity: 0.85; /* <-- ALTERE ESTA LINHA. Menor o valor, mais visível a imagem. */
+    z-index: -1;
 }
 
 /* ====================================================== */
