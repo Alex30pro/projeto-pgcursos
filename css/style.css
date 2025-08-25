@@ -193,8 +193,13 @@ body::before {
 }
 
 .course-card {
-    background-color: var(--cor-fundo-secundaria);
-    border: 1px solid var(--cor-borda);
+    /* EFEITO DE VIDRO - INÍCIO */
+    background-color: rgba(22, 27, 34, 0.65); /* Fundo secundário com 65% de opacidade */
+    -webkit-backdrop-filter: blur(10px); /* Desfoque para o efeito de vidro fosco (para Safari) */
+    backdrop-filter: blur(10px); /* Desfoque para o efeito de vidro fosco */
+    border: 1px solid rgba(48, 54, 61, 0.6); /* Borda sutil e semi-transparente */
+    /* EFEITO DE VIDRO - FIM */
+
     border-radius: 12px;
     padding: 2rem;
     flex-basis: 320px;
@@ -202,12 +207,13 @@ body::before {
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    transition: transform .3s ease, border-color .3s ease;
+    transition: transform .3s ease, border-color .3s ease, background-color .3s ease;
 }
 
 .course-card:hover {
     transform: translateY(-10px);
     border-color: var(--cor-destaque-principal);
+    background-color: rgba(22, 27, 34, 0.85); /* Fica um pouco mais opaco no hover */
 }
 
 .course-title {
@@ -288,8 +294,12 @@ body::before {
 /* ESTILOS DA SEÇÃO DE CONTATO                            */
 /* ====================================================== */
 .contact-section {
-    /* MUDANÇA: Usando a nova variável com transparência */
-    background-color: var(--cor-fundo-secundaria-transparente);
+    /* Altere a cor de fundo para a versão com transparência */
+    background-color: rgba(22, 27, 34, 0.65); 
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(48, 54, 61, 0.6); /* Adiciona uma borda sutil no topo */
+    border-bottom: 1px solid rgba(48, 54, 61, 0.6); /* E embaixo */
     padding: 4rem 5%;
     text-align: center;
 }
