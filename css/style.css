@@ -66,7 +66,7 @@ body::before {
 /* ESTILOS DO HEADER                                      */
 /* ====================================================== */
 .header {
-    background-color: var(--cor-fundo-secundaria);
+    background-color: rgba(22, 27, 34, 0.85); 
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -84,6 +84,7 @@ body::before {
 
 .logo-container img {
     max-height: 50px;
+    border-radius: 8px;
 }
 
 .logo-text {
