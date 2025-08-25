@@ -1,25 +1,29 @@
-/* ====================================================== */
-/* PALETA DE CORES E CONFIGURAÇÕES GERAIS                 */
-/* ====================================================== */
 :root {
-    --cor-fundo: #0d1117;
-    --cor-fundo-secundaria: #161b22;
-    --cor-fundo-secundaria-transparente: rgba(22, 27, 34, 0.85); /* 85% de opacidade */
-    --cor-borda: #30363d;
-    --cor-texto: #c9d1d9;
-    --cor-texto-secundario: #8b949e;
-    --cor-destaque-principal: #3A7DFF;
-    --cor-destaque-texto: #ffffff;
+    /* Cores da paleta laranja */
+    --cor-fundo: #1a1a1a; /* Um fundo quase preto para o laranja vibrar */
+    --cor-fundo-secundaria: #2c2c2c; /* Um cinza bem escuro para os cards */
+    --cor-fundo-secundaria-transparente: rgba(44, 44, 44, 0.85);
+    --cor-borda: #444444; /* Borda cinza escura */
+    --cor-texto: #f0f0f0; /* Texto principal quase branco */
+    --cor-texto-secundario: #a0a0a0; /* Texto secundário cinza claro */
+    
+    /* Cores de destaque da nova paleta */
+    --cor-destaque-principal: #F09410; /* Laranja vibrante */
+    --cor-destaque-secundario: #BC430D; /* Laranja mais escuro para hover/detalhes */
+    --cor-destaque-texto: #ffffff; /* Texto branco para os botões */
 }
 
 body.light-mode {
-    --cor-fundo: #ffffff;
-    --cor-fundo-secundaria: #f0f2f5;
-    --cor-fundo-secundaria-transparente: rgba(240, 242, 245, 0.85); /* 85% de opacidade */
-    --cor-borda: #d0d7de;
-    --cor-texto: #1c1e21;
-    --cor-texto-secundario: #65676b;
-    --cor-destaque-principal: #0c59cf;
+    --cor-fundo: #FEFBF8; /* Um fundo bege/quase branco */
+    --cor-fundo-secundaria: #ffffff; /* Cards brancos */
+    --cor-fundo-secundaria-transparente: rgba(255, 255, 255, 0.85);
+    --cor-borda: #e0e0e0; /* Borda cinza bem clara */
+    --cor-texto: #2c2c2c; /* Texto escuro */
+    --cor-texto-secundario: #6a6a6a; /* Texto secundário cinza */
+    
+    /* Cores de destaque para o tema claro */
+    --cor-destaque-principal: #BC430D; /* Laranja escuro para boa leitura */
+    --cor-destaque-secundario: #F09410; /* Laranja vibrante para hover */
     --cor-destaque-texto: #ffffff;
 }
 
