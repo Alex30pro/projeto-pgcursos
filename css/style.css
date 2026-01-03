@@ -1,29 +1,26 @@
 :root {
-    /* Cores da paleta laranja */
-    --cor-fundo: #241705; /* Laranja bem escuro */
-    --cor-fundo-secundaria: #43301b; /* Tom mais escuro para os cards */
+    --cor-fundo: #241705; 
+    --cor-fundo-secundaria: #43301b; 
     --cor-fundo-secundaria-transparente: rgba(67, 48, 27, 0.85);
-    --cor-borda: #5e4d3a; /* Borda em tom terroso */
-    --cor-texto: #f2e3d5; /* Texto principal quase branco */
-    --cor-texto-secundario: #b8a998; /* Texto secundário mais suave */
+    --cor-borda: #5e4d3a; 
+    --cor-texto: #f2e3d5; 
+    --cor-texto-secundario: #b8a998; 
     
-    /* Cores de destaque da nova paleta */
-    --cor-destaque-principal: #F09410; /* Laranja vibrante */
-    --cor-destaque-secundario: #BC430D; /* Laranja mais escuro para hover */
-    --cor-destaque-texto: #ffffff; /* Texto branco para os botões */
+    --cor-destaque-principal: #F09410; 
+    --cor-destaque-secundario: #BC430D; 
+    --cor-destaque-texto: #ffffff; 
 }
 
 body.light-mode {
-    --cor-fundo: #F8F4F0; /* Um bege bem claro e suave */
-    --cor-fundo-secundaria: #FFFFFF; /* Cards brancos puros */
+    --cor-fundo: #F8F4F0; 
+    --cor-fundo-secundaria: #FFFFFF; 
     --cor-fundo-secundaria-transparente: rgba(255, 255, 255, 0.85);
-    --cor-borda: #E0DAD4; /* Borda cinza claro com tom quente */
-    --cor-texto: #57443A; /* Texto principal em tom de marrom escuro */
-    --cor-texto-secundario: #8A786F; /* Texto secundário em tom de marrom mais claro */
+    --cor-borda: #E0DAD4; 
+    --cor-texto: #57443A; 
+    --cor-texto-secundario: #8A786F; 
 
-    /* Cores de destaque para o tema claro */
-    --cor-destaque-principal: #BC430D; /* Laranja escuro para botões e links */
-    --cor-destaque-secundario: #F09410; /* Laranja vibrante para hover */
+    --cor-destaque-principal: #BC430D; 
+    --cor-destaque-secundario: #F09410; 
     --cor-destaque-texto: #FFFFFF;
 }
 
@@ -39,14 +36,13 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
     
-    /* NOVIDADE: IMAGEM DE FUNDO */
-    background-image: url('../img/fundo-logo.png'); /* Caminho para a imagem */
-    background-size: 2000px; /* Tamanho da imagem no fundo */
-    background-repeat: no-repeat; /* Para a imagem não se repetir */
-    background-position: center center; /* Centraliza a imagem na tela */
-    background-attachment: fixed; /* Deixa a imagem fixa enquanto a página rola */
-    background-blend-mode: overlay; /* Efeito para mesclar com a cor de fundo */
-    opacity: 1; /* Garantir que o body esteja visível */
+    background-image: url('../img/fundo-logo.png'); 
+    background-size: 2000px; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-blend-mode: overlay; 
+    opacity: 1; 
 }
 
 body::before {
@@ -60,9 +56,6 @@ body::before {
     z-index: -1;
 }
 
-/* ====================================================== */
-/* ESTILOS DO HEADER                                      */
-/* ====================================================== */
 .header {
     background-color: rgba(22, 27, 34, 0.85); 
     padding: 1rem 5%;
@@ -123,9 +116,6 @@ body::before {
     display: none;
 }
 
-/* ====================================================== */
-/* ESTILOS DA SEÇÃO HERO (BOAS-VINDAS)                    */
-/* ====================================================== */
 .hero-section {
     min-height: calc(100vh - 85px);
     display: flex;
@@ -170,9 +160,6 @@ body::before {
     box-shadow: 0 0 20px color-mix(in srgb, var(--cor-destaque-principal) 50%, transparent);
 }
 
-/* ====================================================== */
-/* ESTILOS DAS SEÇÕES DE CURSOS                            */
-/* ====================================================== */
 .courses-section {
     padding: 4rem 5%;
 }
@@ -192,12 +179,10 @@ body::before {
 }
 
 .course-card {
-    /* EFEITO DE VIDRO - INÍCIO */
-    background-color: rgba(22, 27, 34, 0.65); /* Fundo secundário com 65% de opacidade */
-    -webkit-backdrop-filter: blur(10px); /* Desfoque para o efeito de vidro fosco (para Safari) */
-    backdrop-filter: blur(10px); /* Desfoque para o efeito de vidro fosco */
-    border: 1px solid rgba(48, 54, 61, 0.6); /* Borda sutil e semi-transparente */
-    /* EFEITO DE VIDRO - FIM */
+    background-color: rgba(22, 27, 34, 0.65); 
+    -webkit-backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(48, 54, 61, 0.6);
 
     border-radius: 12px;
     padding: 2rem;
@@ -212,7 +197,7 @@ body::before {
 .course-card:hover {
     transform: translateY(-10px);
     border-color: var(--cor-destaque-principal);
-    background-color: rgba(22, 27, 34, 0.85); /* Fica um pouco mais opaco no hover */
+    background-color: rgba(22, 27, 34, 0.85); 
 }
 
 .course-title {
@@ -245,11 +230,6 @@ body::before {
     color: var(--cor-destaque-texto);
 }
 
-/* ====================================================== */
-/* ESTILOS PARA "VER MAIS" CURSOS                         */
-/* ====================================================== */
-
-/* Esta classe será adicionada via JS para esconder os cards */
 .course-card.hidden {
     display: none;
 }
@@ -289,16 +269,13 @@ body::before {
     transform: translateY(3px);
 }
 
-/* ====================================================== */
-/* ESTILOS DA SEÇÃO DE CONTATO                            */
-/* ====================================================== */
+
 .contact-section {
-    /* Altere a cor de fundo para a versão com transparência */
     background-color: rgba(22, 27, 34, 0.65); 
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(48, 54, 61, 0.6); /* Adiciona uma borda sutil no topo */
-    border-bottom: 1px solid rgba(48, 54, 61, 0.6); /* E embaixo */
+    border-top: 1px solid rgba(48, 54, 61, 0.6); 
+    border-bottom: 1px solid rgba(48, 54, 61, 0.6); 
     padding: 4rem 5%;
     text-align: center;
 }
@@ -306,40 +283,35 @@ body::before {
 .contact-subtitle { max-width: 500px; margin: 0 auto 2.5rem; color: var(--cor-texto-secundario); font-size: 1.1rem; }
 .social-links { display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 
-/* Ajuste para os links que são SÓ ÍCONE */
 .social-links a {
-    min-width: 60px; /* Largura mínima */
+    min-width: 60px; 
     height: 60px;
-    padding: 0 20px; /* Espaçamento interno */
+    padding: 0 20px; 
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--cor-destaque-principal);
     border: 2px solid var(--cor-texto-secundario);
-    border-radius: 50px; /* Borda de pílula, para acomodar texto */
+    border-radius: 50px; 
     text-decoration: none;
-    font-size: 1.2rem; /* Tamanho do texto/email */
+    font-size: 1.2rem; 
     font-weight: 500;
     transition: all .3s ease;
 }
 
-/* Ajuste para o ícone dentro do link */
 .social-links a i {
-    font-size: 1.8rem; /* Tamanho do ícone */
-    margin-right: 0.75rem; /* Espaço entre o ícone e o texto */
+    font-size: 1.8rem; 
+    margin-right: 0.75rem; 
 }
 
-/* Esconde o texto do e-mail por padrão */
 .social-links a span {
     display: none;
 }
 
-/* Mostra o texto APENAS no link de e-mail */
 .social-links a.email-link span {
     display: inline;
 }
 
-/* Faz os links que são só ícone voltarem a ser um círculo perfeito */
 .social-links a:not(.email-link) {
     width: 60px;
     height: 60px;
@@ -347,7 +319,6 @@ body::before {
     border-radius: 50%;
 }
 
-/* Esconde o espaço do ícone em links que são só texto (caso precise no futuro) */
 .social-links a:not(.email-link) i {
     margin-right: 0;
 }
@@ -359,9 +330,6 @@ body::before {
     transform: translateY(-5px);
 }
 
-/* ====================================================== */
-/* ESTILOS DO RODAPÉ                                      */
-/* ====================================================== */
 .footer {
     background-color: var(--cor-fundo);
     text-align: center;
@@ -370,9 +338,7 @@ body::before {
     font-size: .9rem;
     color: var(--cor-texto-secundario);
 }
-/* ====================================================== */
-/* AJUSTES PARA DISPOSITIVOS MÓVEIS (CELULARES E TABLETS) */
-/* ====================================================== */
+
 @media screen and (max-width: 768px) {
 
     .courses-section, .contact-section {
@@ -380,13 +346,13 @@ body::before {
     }
     
     .header {
-        flex-direction: column; /* Coloca os itens um embaixo do outro */
-        gap: 1rem; /* Adiciona um espaço entre as linhas */
+        flex-direction: column; 
+        gap: 1rem; 
         padding: 1rem;
     }
 
     .header .navigation {
-        order: 3; /* Muda a ordem, colocando a navegação por último */
+        order: 3; 
         border-top: 1px solid var(--cor-borda);
         width: 100%;
         padding-top: 1rem;
@@ -396,12 +362,12 @@ body::before {
     }
     
     .header .navigation a {
-        margin-left: 0; /* Remove a margem antiga */
+        margin-left: 0; 
     }
 
     .logo-container {
         width: 100%;
-        justify-content: space-between; /* Alinha logo e botão de tema */
+        justify-content: space-between; 
     }
 
 
@@ -423,47 +389,40 @@ body::before {
     }
 
     .course-card {
-        padding: 1.5rem; /* Deixa os cards um pouco menos "gordos" */
+        padding: 1.5rem; 
     }
 
     .social-links a.email-link {
         width: 100%;
-        max-width: 350px; /* Limita a largura máxima */
+        max-width: 350px; 
     }
     
     .social-links a.email-link span {
-        font-size: 1rem; /* Diminui a fonte do e-mail para caber melhor */
+        font-size: 1rem; 
     }
 }
 
-/* --- Estilos do Ícone Flutuante do WhatsApp --- */
 .whatsapp-float {
-    position: fixed; /* Flutua sobre a página */
+    position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 25px; /* Distância da parte de baixo */
-    left: 25px; /* Distância da esquerda */
-    background-color: #25D366; /* Cor oficial do WhatsApp */
-    border-radius: 50%; /* Deixa o fundo redondo */
+    bottom: 25px; 
+    left: 25px; 
+    background-color: #25D366; 
+    border-radius: 50%; 
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Garante que ele fique acima de tudo */
-
-    /* Centraliza o ícone dentro do círculo */
+    z-index: 1000; 
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: transform 0.2s ease-in-out;
-
-    /* A LINHA QUE ADICIONAMOS PARA REMOVER O SUBLINHADO */
     text-decoration: none;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1); /* Efeito de aumentar um pouco ao passar o mouse */
+    transform: scale(1.1); 
 }
 
-/* Estilo do ícone da Font Awesome */
 .whatsapp-float i {
     font-size: 36px;
     color: #fff;
